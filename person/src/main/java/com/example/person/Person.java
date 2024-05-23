@@ -1,9 +1,15 @@
 package com.example.person;
 
-// Changed from javax to jakarta
+
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Person {
@@ -32,6 +38,12 @@ public class Person {
 		this.address = address;
         this.phoneNumber = phoneNumber;
 	}
+
+    @ManyToMany
+    @JoinTable(name = "person_hobby",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "hobby_id"))
+    private Set<Hobby> hobbies = new HashSet<>();
 
 
     // Getters and Setters
@@ -65,5 +77,13 @@ public class Person {
     public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+    public Set<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(Set<Hobby> hobbies) {
+        this.hobbies = hobbies;
+    }
 
 }
