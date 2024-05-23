@@ -1,9 +1,7 @@
 # Spring-Boot-API
 
-**In progress**
+**It works! I think?**
 
-Build success when running 
-'./mvnw spring-boot:run'
-
-but not able to open
-'http://localhost:8080/h2-console'
+Instructions:
+    run: ./mvnw spring-boot:run
+    open: http://localhost:8080/h2-console

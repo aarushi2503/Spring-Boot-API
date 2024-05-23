@@ -1,8 +1,10 @@
 package com.example.person;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+@Entity
 public class Hobby {
     @Id
     @GeneratedValue
