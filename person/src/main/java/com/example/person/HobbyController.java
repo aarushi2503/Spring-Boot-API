@@ -43,11 +43,11 @@ public class HobbyController {
         return hobbyRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Hobby getHobbyById(@PathVariable Long id) {
-        return hobbyRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Hobby not found with id: " + id));
-    }
+    // @GetMapping("/{id}")
+    // public Hobby getHobbyById(@PathVariable Long id) {
+    //     return hobbyRepository.findById(id)
+    //             .orElseThrow(() -> new RuntimeException("Hobby not found with id: " + id));
+    // }
 
     @PutMapping("/{id}")
     public Hobby updateHobby(@PathVariable Long id, @RequestBody Hobby hobbyDetails) {

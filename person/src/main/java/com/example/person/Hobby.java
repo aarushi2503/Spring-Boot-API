@@ -1,8 +1,12 @@
 package com.example.person;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Hobby {
@@ -18,6 +22,8 @@ public class Hobby {
         this.name = name;
     }
 
+    @ManyToMany(mappedBy = "hobbies")
+    private Set<Person> people = new HashSet<>();
 
     // Getters and Setters
 
